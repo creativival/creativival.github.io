@@ -166,7 +166,6 @@
     var slug;
 
     function processTag(tag) {
-      tag = tag.replace('https://scratchx.org', '/home/pi/Scratch');
       if (tag == '<!DOCTYPE html>') {
           html = '<!DOCTYPE html>';
       } else if (tag == '<html>' && html != '<!DOCTYPE html>') {
