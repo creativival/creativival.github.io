@@ -294,9 +294,9 @@
 
     ext.img = function(str1, str2) {
         if (str1 == "") {
-            tag = '<img src="' + str2 + '">';
+            tag = '<img src="http://localhost/' + str2 + '">';
         } else {
-            tag = '<img ' + str1 + ' src="' + str2 + '">';
+            tag = '<img ' + str1 + ' src="http://localhost/' + str2 + '">';
         }
         processTag(tag);
     };
@@ -510,8 +510,8 @@
 //            [' ', '</div>', 'div_end'],
 //            [' ', '<span %s >', 'span', ''],
 //            [' ', '</span>', 'span_end'],
-            [' ', '<br>', 'br'],
-            [' ', '<img %s src=" %s ">', 'img', '', 'https://wiki.scratch.mit.edu/w/images/Cat.png'],
+//            [' ', '<br>', 'br'],
+            [' ', '<img %s src="http://localhost/ %s ">', 'img', '', 'xxx.png'],
 //            [' ', '<a %s href=" %s ">', 'a', '', 'https://www.google.co.jp/'],
 //            [' ', '</a>', 'a_end'],
 //            [' ', '<table  %s  border=" %n ">', 'table', '', 1],
