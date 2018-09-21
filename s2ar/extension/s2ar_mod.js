@@ -91,7 +91,7 @@
           set_char: '文字を書く。x座標を %n 、y座標を %n 、z座標を %n 、文字 %s 、 %s 軸',
           set_line: '２点間に線を引く。x1 を %n 、y1 を %n 、z1 を %n 、x2 を %n 、y2 を %n 、z2を %n',
           set_roof: '屋根を作る。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n 、 %s 軸に',
-          set_polygon_file_format: '3Dモデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、ファイル %s',
+          polygon_file_format: '3Dモデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、ファイル %s',
           set_color: 'ブロックの色を r: %n g: %n b: %n に変える',
           reset: 'リセット'
         },
