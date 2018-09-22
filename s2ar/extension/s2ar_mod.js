@@ -139,7 +139,7 @@
           [' ', locale[lang].set_line, 'set_line', 0, 0, 0, 10, 10, 10],
           [' ', locale[lang].set_roof, 'set_roof', 0, 3, 0, 14, 10, 7, 'z'],
           [' ', locale[lang].polygon_file_format, 'polygon_file_format', 0, 0, 0, 'iTunesFileSharing'],
-          [' ', locale[lang].animation, 'animation', 0, 0, 0, , 1, 0, 0, 100, 'model1.ply,model2.ply,model3.ply'],
+          [' ', locale[lang].animation, 'animation', 0, 0, 0, 1, 0, 0, 100, 'model1.ply,model2.ply,model3.ply'],
           [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
           [' ', locale[lang].reset, 'reset']
