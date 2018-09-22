@@ -54,7 +54,7 @@
       }
 
       ext.animation = function(x, y, z, diffX, diffY, diffZ, times, files) {
-        let command = "animation:" + x + ":" + y + ":" + z + ":" + diffX + diffY + ":" + diffZ + ":" + times + ":" + files;
+        let command = "animation:" + x + ":" + y + ":" + z + ":" + diffX + ":" + diffY + ":" + diffZ + ":" + times + ":" + files;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
