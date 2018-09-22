@@ -73,8 +73,8 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
-      ext.remove = function(x, y, z) {
-        let command = "remove:" + x + ":" + y + ":" + z;
+      ext.remove_cube = function(x, y, z) {
+        let command = "remove_cube:" + x + ":" + y + ":" + z;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
@@ -98,7 +98,7 @@
           set_roof: '屋根を作る。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n 、 %s 軸に',
           polygon_file_format: '3Dモデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、PLYファイル %s',
           set_color: 'ブロックの色を r: %n g: %n b: %n に変える',
-          remove: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
+          remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
         },
         en: {
@@ -114,7 +114,7 @@
           set_roof: 'set roof at x: %n y: %n z: %n wide: %n depth: %n height: %n axis: %s',
           polygon_file_format: 'create 3d model at x: %n y: %n z: %n ply file: %s',
           set_color: 'set color to r: %n g: %n b: %n',
-          remove: 'remove cube at x: %n y: %n z: %n',
+          remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
         },
       }
@@ -133,7 +133,7 @@
           [' ', locale[lang].set_roof, 'set_roof', 0, 3, 0, 14, 10, 7, 'z'],
           [' ', locale[lang].polygon_file_format, 'polygon_file_format', 0, 0, 0, 'iTunesFileSharing'],
           [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
-          [' ', locale[lang].remove, 'remove_cube', 1, 0, 1],
+          [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
           [' ', locale[lang].reset, 'reset']
         ]
       };
