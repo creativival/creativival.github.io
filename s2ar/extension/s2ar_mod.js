@@ -102,7 +102,7 @@
           set_line: '２点間に線を引く。x1 を %n 、y1 を %n 、z1 を %n 、x2 を %n 、y2 を %n 、z2を %n',
           set_roof: '屋根を作る。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n 、 %s 軸に',
           polygon_file_format: '3Dモデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、PLYファイル %s',
-          animation: 'アニメーション。x座標を %n 、y座標を %n 、z座標を %n 、差分Xを %n 、 差分Yを %n 、 差分Zを %n 、 時間を %s 、回数を %n 、モデルデータを %s',
+          animation: 'アニメーション。x座標を %n 、y座標を %n 、z座標を %n 、差分Xを %n 、 差分Yを %n 、 差分Zを %n 、 時間を %n 、回数を %n 、モデルデータを %s',
           set_color: 'ブロックの色を r: %n g: %n b: %n に変える',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
@@ -119,7 +119,7 @@
           set_line: 'set line between x1: %n y1: %n z1: %n and x2: %n y2: %n z2: %n',
           set_roof: 'set roof at x: %n y: %n z: %n wide: %n depth: %n height: %n axis: %s',
           polygon_file_format: 'create 3d model at x: %n y: %n z: %n ply file: %s',
-          animation: 'animation at x: %n 、y: %n 、z: %n diffX: %n diffY: %n diffZ: %n time: %s times: %n models: %s',
+          animation: 'animation at x: %n 、y: %n 、z: %n diffX: %n diffY: %n diffZ: %n time: %n times: %n models: %s',
           set_color: 'set color to r: %n g: %n b: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
