@@ -63,8 +63,8 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
-      ext.molecular_structure = function(x, y, z, , magnification, s) {
-        let command = "molecular_structure:" + x + ":" + y + ":" + z + ":" + maginification + ":" + s;
+      ext.molecular_structure = function(x, y, z, magnification, s) {
+        let command = "molecular_structure:" + x + ":" + y + ":" + z + ":" + magnification + ":" + s;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
