@@ -23,6 +23,11 @@
         });
       }
 
+      ext.change_cube_size = function(maginification) {
+        let command = "change_cube_size:" + maginification;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
       ext.set_cube = function(x, y, z) {
         let command = "set_cube:" + x + ":" + y + ":" + z;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
@@ -103,6 +108,7 @@
         ja: {
           set_hostname: '接続先を %s に設定する',
           connect: 'ID: %s - %s で接続する',
+          set_cube: 'ブロック・サイズの変更。拡大倍率を %n',
           set_cube: 'ブロックを置く。x座標を %n 、y座標を %n 、z座標を %n',
           set_box: '直方体を置く。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n',
           set_cylinder: '円柱を置く。x座標を %n 、y座標を %n 、z座標を %n 、半径を %n 、高さを %n 、 %s 軸',
@@ -122,6 +128,7 @@
         en: {
           set_hostname: 'Set hostname to %s',
           connect: 'Connect with ID: %s -  %s',
+          change_cube_size: 'change cube size maginification: %n',
           set_cube: 'set cube at x: %n y: %n z: %n',
           set_box: 'set box at x: %n y: %n z: %n wide: %n depth: %n height: %n',
           set_cylinder: 'set cylinder at x: %n y: %n z: %n radius: %n height: %n axis: %s',
@@ -144,6 +151,7 @@
         blocks: [
           [' ', locale[lang].set_hostname, 'set_hostname', hostname],
           [' ', locale[lang].connect, 'connect', '', ''],
+          [' ', locale[lang].set_cube, 'change_cube_size', 1],
           [' ', locale[lang].set_cube, 'set_cube', 1, 0, 1],
           [' ', locale[lang].set_box, 'set_box', 2, 0, 2, 2, 2, 2],
           [' ', locale[lang].set_cylinder, 'set_cylinder', 3, 0, 3, 4, 4, 'y'],
