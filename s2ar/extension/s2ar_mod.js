@@ -151,7 +151,7 @@
         blocks: [
           [' ', locale[lang].set_hostname, 'set_hostname', hostname],
           [' ', locale[lang].connect, 'connect', '', ''],
-          [' ', locale[lang].set_cube, 'change_cube_size', 1],
+          [' ', locale[lang].change_cube_size, 'change_cube_size', 1],
           [' ', locale[lang].set_cube, 'set_cube', 1, 0, 1],
           [' ', locale[lang].set_box, 'set_box', 2, 0, 2, 2, 2, 2],
           [' ', locale[lang].set_cylinder, 'set_cylinder', 3, 0, 3, 4, 4, 'y'],
