@@ -68,6 +68,11 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
+      ext.pin = function(csv_name, width, height, up_left_latitude, up_left_longitude, down_right_latitude, down_right_longitude) {
+        let command = "pin:" + csv_name + ":" + width + ":" + height + ":" + up_left_latitude + ":" + up_left_longitude + ":" + down_right_latitude + ":" + down_right_longitude;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
       ext.molecular_structure = function(x, y, z, magnification, s) {
         let command = "molecular_structure:" + x + ":" + y + ":" + z + ":" + magnification + ":" + s;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
@@ -120,8 +125,9 @@
           polygon_file_format: '3Dモデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、PLYファイル %s',
           animation: 'アニメーション。x座標を %n 、y座標を %n 、z座標を %n 、差分Xを %n 、 差分Yを %n 、 差分Zを %n 、 時間を %n 、回数を %n 、モデルデータを %s',
           map: '地図を作成。地図データを %s 、横を %n 、縦を %n 、拡大倍率を %n 、（低地の色を r1: %n g1: %n b1: %n ）、（高地の色を r2: %n g2: %n b2: %n ）、上方向へ %n',
-          molecular_structure: '分子構造を作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
-          set_color: 'ブロックの色を r: %n g: %n b: %n に変える',
+          pin: 'ピンを立てる。位置データを %s 、横を %n 、縦を %n 、左上緯度を %n 、左上経度を %n 右下緯度を %n 右下経度を %n',
+          molecular_structure: '分子構造モデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
+          set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
         },
@@ -140,6 +146,7 @@
           polygon_file_format: 'create 3d model at x: %n y: %n z: %n ply file: %s',
           animation: 'animation at x: %n y: %n z: %n diffX: %n diffY: %n diffZ: %n time: %n times: %n models: %s',
           map: 'draw map from csv: %s width: %n height: %n magnification: %n (lowland r1: %n g1: %n b1: %n ) (highland r2: %n g2: %n b2: %n ) upward: %n',
+          pin: 'stand pins at potision: %s width: %n height: %n up-left (latitude: %n longitude: %n ) down-right (latitude: %n longitude: %n )',
           molecular_structure: 'molecular structure at x: %n y: %n z: %n magnification: %n mld file: %s',
           set_color: 'set color to r: %n g: %n b: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
@@ -163,6 +170,7 @@
           [' ', locale[lang].polygon_file_format, 'polygon_file_format', 0, 0, 0, 'model.ply'],
           [' ', locale[lang].animation, 'animation', 0, 0, 0, 1, 0, 0, 2.0, 100, 'model1.ply,model2.ply,model3.ply'],
           [' ', locale[lang].map, 'map', 'map_data.csv', 257, 257, 100, 0, 255, 0, 124, 96, 53, 0],
+          [' ', locale[lang].pin, 'pin', 'potision_data.csv', 257, 257, 46.317, 126.738, 28.613, 149.238],
           [' ', locale[lang].molecular_structure, 'molecular_structure', 0, 10, 0, 10, 'methane.mld'],
           [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
