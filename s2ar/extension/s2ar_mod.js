@@ -93,8 +93,8 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
-      ext.set_color = function(r, g, b) {
-        let command = "set_color:" + r + ":" + g + ":" + b;
+      ext.set_color = function(r, g, b, a) {
+        let command = "set_color:" + r + ":" + g + ":" + b + ":" + a;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
@@ -127,7 +127,7 @@
           map: '地図を作成。地図データを %s 、横を %n 、縦を %n 、拡大倍率を %n 、（低地の色を r1: %n g1: %n b1: %n ）、（高地の色を r2: %n g2: %n b2: %n ）、上方向へ %n',
           pin: 'ピンを立てる。位置データを %s 、横を %n 、縦を %n 、拡大倍率を %n 、左上緯度を %n 、左上経度を %n 、右下緯度を %n 、右下経度を %n 横に %n',
           molecular_structure: '分子構造モデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
-          set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
+          set_color: 'ブロックの色を変える。r: %n g: %n b: %n alpha値: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
         },
@@ -148,7 +148,7 @@
           map: 'draw map from csv: %s width: %n height: %n magnification: %n (lowland r1: %n g1: %n b1: %n ) (highland r2: %n g2: %n b2: %n ) upward: %n',
           pin: 'stand pins at potision: %s width: %n height: %n magnification: %n up-left (latitude: %n longitude: %n ) down-right (latitude: %n longitude: %n ) shift %n',
           molecular_structure: 'molecular structure at x: %n y: %n z: %n magnification: %n mld file: %s',
-          set_color: 'set color to r: %n g: %n b: %n',
+          set_color: 'set color to r: %n g: %n b: %n alpha: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
         },
@@ -172,7 +172,7 @@
           [' ', locale[lang].map, 'map', 'map_data.csv', 257, 257, 100, 0, 255, 0, 124, 96, 53, 0],
           [' ', locale[lang].pin, 'pin', 'potision_data.csv', 257, 257, 2, 46.852, 126.738, 29.148, 149.238, 0],
           [' ', locale[lang].molecular_structure, 'molecular_structure', 0, 10, 0, 10, 'methane.mld'],
-          [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
+          [' ', locale[lang].set_color, 'set_color', 255, 255, 255, 1.0],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
           [' ', locale[lang].reset, 'reset']
         ]
