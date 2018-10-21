@@ -199,7 +199,7 @@
           [' ', locale[lang].reset, 'reset']
         ],
         menus: {
-          axes: ['x', 'y', 'z']
+          axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3']
         }
       };
