@@ -217,7 +217,7 @@
         menus: {
           axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3'],
-          shape: ['cube', 'sphere', 'cylinder', 'pyramid']
+          shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid']
         }
       };
 
