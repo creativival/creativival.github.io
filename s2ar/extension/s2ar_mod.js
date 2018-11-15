@@ -156,8 +156,8 @@
           set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
           set_alpha: 'ブロックの透明度を変える。alpha: %n',
           change_layer: 'ＡＲのレイヤを変える。レイヤ: %m.layer',
-          change_shape: '基本形状を変える。shape: %m.layer',
-          cahnge_light: 'ライティングの変更。x: %n y: %n z: %n intensity: %n',
+          change_shape: '基本形状を変える。 %m.shape',
+          change_light: 'ライティングの変更。x: %n y: %n z: %n intensity: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
         },
