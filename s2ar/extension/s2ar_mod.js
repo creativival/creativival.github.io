@@ -226,7 +226,7 @@
           axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3'],
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
-          material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching_metal', 'stainless_steel', 'stone01', 'stone02', 'terra_cotta']
+          material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punchingMetal', 'stainlessSteel', 'stone01', 'stone02', 'terraCotta']
         }
       };
 
