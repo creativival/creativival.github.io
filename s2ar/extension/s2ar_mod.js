@@ -188,7 +188,7 @@
           set_alpha: 'set transparency to alpha: %n',
           change_layer: 'change AR layer: %m.layer',
           change_shape: 'change basic shape: %m.shape',
-          change_material: 'change texture: %m.material',
+          change_material: 'change material: %m.material',
           change_light: 'change lighting at x: %n y: %n z: %n intensity: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
