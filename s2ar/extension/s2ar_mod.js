@@ -119,6 +119,11 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
+      ext.change_material = function(material) {
+        let command = "change_material:" + material;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
       ext.change_light = function(x, y, z, intensity) {
         let command = "change_light:" + x + ":" + y + ":" + z + ":" + intensity;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
@@ -155,8 +160,9 @@
           molecular_structure: '分子構造モデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
           set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
           set_alpha: 'ブロックの透明度を変える。alpha: %n',
-          change_layer: 'ＡＲのレイヤを変える。レイヤ: %m.layer',
+          change_layer: 'ARのレイヤを変える。レイヤ: %m.layer',
           change_shape: '基本形状を変える。 %m.shape',
+          change_material: 'テクスチャを変える。 %m.material',
           change_light: 'ライティングの変更。x: %n y: %n z: %n intensity: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
@@ -182,6 +188,7 @@
           set_alpha: 'set transparency to alpha: %n',
           change_layer: 'change AR layer: %m.layer',
           change_shape: 'change basic shape: %m.shape',
+          change_material: 'change texture: %m.material',
           change_light: 'change lighting at x: %n y: %n z: %n intensity: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
@@ -210,6 +217,7 @@
           [' ', locale[lang].set_alpha, 'set_alpha', 1.0],
           [' ', locale[lang].change_layer, 'change_layer', '1'],
           [' ', locale[lang].change_shape, 'change_shape', 'cube'],
+          [' ', locale[lang].change_shape, 'change_material', 'none'],
           [' ', locale[lang].change_light, 'change_light', 10, 10, 10, 1000],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
           [' ', locale[lang].reset, 'reset']
@@ -217,7 +225,8 @@
         menus: {
           axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3'],
-          shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid']
+          shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
+          material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching_metal', 'stainless_stell', 'stone01', 'stone02', 'terra_cotta']
         }
       };
 
