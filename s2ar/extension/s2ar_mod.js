@@ -224,7 +224,7 @@
           [' ', locale[lang].set_alpha, 'set_alpha', 1.0],
           [' ', locale[lang].change_layer, 'change_layer', '1'],
           [' ', locale[lang].change_shape, 'change_shape', 'cube'],
-          [' ', locale[lang].rotation_shape, 'rotation_shape', '0'],
+          [' ', locale[lang].rotation_shape, 'rotation_shape', 'y'],
           [' ', locale[lang].change_material, 'change_material', 'none'],
           [' ', locale[lang].change_light, 'change_light', 10, 10, 10, 1000],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
@@ -234,7 +234,7 @@
           axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3'],
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
-          rotation: ['0', '1', '2', '3', '4', '5'],
+          rotation: ['y', 'z', 'x', '-z', '-x', '-y'],
           material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta']
         }
       };
