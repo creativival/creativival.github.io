@@ -120,7 +120,7 @@
       }
 
       ext.rotation_shape = function(rotationX, rotationY) {
-        let command = "rotation_shape:" + rotation + ":" + rotataionY;
+        let command = "rotation_shape:" + rotationX + ":" + rotataionY;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
@@ -167,7 +167,7 @@
           set_alpha: 'ブロックの透明度を変える。alpha: %n',
           change_layer: 'ARのレイヤを変える。レイヤ: %m.layer',
           change_shape: '基本形状を変える。 %m.shape',
-          rotation_shape: '基本形状を回転する。rotationX %n rotaionY %n',
+          rotation_shape: '基本形状を回転する。rotationX: %n rotaionY: %n',
           change_material: 'テクスチャを変える。 %m.material',
           change_light: 'ライティングの変更。x: %n y: %n z: %n intensity: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
@@ -194,7 +194,7 @@
           set_alpha: 'set transparency to alpha: %n',
           change_layer: 'change AR layer: %m.layer',
           change_shape: 'change basic shape: %m.shape',
-          rotation_shape: 'rotation basic shape: rotationX %n rotaionY %n',
+          rotation_shape: 'rotation basic shape: rotationX: %n rotaionY: %n',
           change_material: 'change material: %m.material',
           change_light: 'change lighting at x: %n y: %n z: %n intensity: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
