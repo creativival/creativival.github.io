@@ -234,7 +234,6 @@
           axes: ['x', 'y', 'z'],
           layer: ['1', '2', '3'],
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
-          //rotation: ['y', 'z', 'x', '-z', '-x', '-y'],
           material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta', 'earth']
         }
       };
