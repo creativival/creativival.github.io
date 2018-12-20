@@ -227,7 +227,7 @@
           [' ', locale[lang].map, 'map', 'map_data.csv', 257, 257, 100, 0, 255, 0, 124, 96, 53, 0],
           [' ', locale[lang].pin, 'pin', 'potision_data.csv', 257, 257, 2, 46.852, 126.738, 29.148, 149.238, 0],
           [' ', locale[lang].molecular_structure, 'molecular_structure', 0, 10, 0, 10, 'methane.mld'],
-          [' ', locale[lang].ar_game, 'ar_game', 0, 0, 0, 10, 'spaceship', 'red', '+y'],
+          [' ', locale[lang].ar_game, 'ar_game', 0, 0, 0, 'spaceship', 'red', '+y'],
           [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
           [' ', locale[lang].set_alpha, 'set_alpha', 1.0],
           [' ', locale[lang].change_layer, 'change_layer', '1'],
@@ -244,7 +244,7 @@
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
           material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta', 'earth'],
           model: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', '2x2x2', '4x4x4', '8x8x8'],
-          color: ['red', 'green', 'blue, 'yellow', 'cyan', 'magenta', 'white', 'black'],
+          color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
         }
       };
