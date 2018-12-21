@@ -168,7 +168,7 @@
           map: '地図を作成。地図データを %s 、幅を %n 、高さを %n 、拡大倍率を %n 、（低地の色を r1: %n g1: %n b1: %n ）、（高地の色を r2: %n g2: %n b2: %n ）、上方向へ %n',
           pin: 'ピンを立てる。位置データを %s 、幅を %n 、高さを %n 、拡大倍率を %n 、左上緯度を %n 、左上経度を %n 、右下緯度を %n 、右下経度を %n 横に %n ずらす',
           molecular_structure: '分子構造モデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
-          ar_game: 'キャラクターをスポーン。X座標: %n Y座標: %n Z座標: %n モデル: %m.model 色: %m.color 向き: %m.direction',
+          ar_game: 'キャラクターを作成。X座標: %n Y座標: %n Z座標: %n モデル: %m.model 色: %m.color 向き: %m.direction',
           set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
           set_alpha: 'ブロックの透明度を変える。alpha: %n',
           change_layer: 'ARのレイヤを変える。レイヤ: %m.layer',
@@ -243,7 +243,7 @@
           layer: ['1', '2', '3'],
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
           material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta', 'earth'],
-          model: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', '2x2x2', '4x4x4', '8x8x8'],
+          model: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', 'sword', 'fire', 'explosion', '1x1x1', '2x2x2', '4x4x4', '8x8x8'],
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
         }
