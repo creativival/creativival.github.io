@@ -243,7 +243,7 @@
           layer: ['1', '2', '3'],
           shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
           material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta', 'earth'],
-          sprites: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', 'sword', 'fire', 'explosion', '1x1x1', '2x2x2', '4x4x4', '8x8x8'],
+          sprite: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', 'sword', 'fire', 'explosion', '1x1x1', '2x2x2', '4x4x4', '8x8x8'],
           costume: ['a', 'b'],
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
