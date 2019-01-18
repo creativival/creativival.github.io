@@ -20,8 +20,8 @@
         hostname = str;
       };
 
-      ext.connect = function(str1, str2) {
-        roomId = str1 + "-" + str2;
+      ext.connect = function(str) {
+        roomId = str;
         socket = io.connect('http://' + hostname);
         socket.on("connect", function() {
           connected = true;
@@ -99,6 +99,11 @@
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
+      ext.ar_game = function(x, y, z, sprite, costume, color, direction) {
+        let command = "ar_game:" + x + ":" + y + ":" + z + ":" + sprite  + ":" + costume + ":" + color + ":" + direction;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
       ext.set_color = function(r, g, b) {
         let command = "set_color:" + r + ":" + g + ":" + b;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
@@ -111,6 +116,26 @@
 
       ext.change_layer = function(l) {
         let command = "change_layer:" + l;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
+      ext.change_shape = function(shape) {
+        let command = "change_shape:" + shape;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
+      ext.rotate_shape = function(rotationX, rotationY, rotationZ) {
+        let command = "rotate_shape:" + rotationX + ":" + rotationY + ":" + rotationZ;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
+      ext.change_material = function(material) {
+        let command = "change_material:" + material;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
+      ext.change_light = function(x, y, z, intensity) {
+        let command = "change_light:" + x + ":" + y + ":" + z + ":" + intensity;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
@@ -128,7 +153,7 @@
       var locale = {
         ja: {
           set_hostname: '接続先を %s に設定する',
-          connect: 'ID: %s - %s で接続する',
+          connect: 'ID: %s で接続する',
           change_cube_size: 'ブロックサイズの変更。拡大倍率を %n',
           set_cube: 'ブロックを置く。x座標を %n 、y座標を %n 、z座標を %n',
           set_box: '直方体を置く。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n',
@@ -143,15 +168,20 @@
           map: '地図を作成。地図データを %s 、幅を %n 、高さを %n 、拡大倍率を %n 、（低地の色を r1: %n g1: %n b1: %n ）、（高地の色を r2: %n g2: %n b2: %n ）、上方向へ %n',
           pin: 'ピンを立てる。位置データを %s 、幅を %n 、高さを %n 、拡大倍率を %n 、左上緯度を %n 、左上経度を %n 、右下緯度を %n 、右下経度を %n 横に %n ずらす',
           molecular_structure: '分子構造モデルを作成。x座標を %n 、y座標を %n 、z座標を %n 、拡大倍率を %n 、MLDファイル %s',
+          ar_game: 'スプライトを作成。X座標: %n Y座標: %n Z座標: %n スプライト: %m.sprite コスチューム： %m.costume 色: %m.color 向き: %m.direction',
           set_color: 'ブロックの色を変える。r: %n g: %n b: %n',
           set_alpha: 'ブロックの透明度を変える。alpha: %n',
-          change_layer: 'ＡＲのレイヤを変える。レイヤ: %m.layer',
+          change_layer: 'ARのレイヤを変える。レイヤ: %m.layer',
+          change_shape: '基本形状を変える。 %m.shape',
+          rotate_shape: '基本形状を回転する。rotationX: %n rotationY: %n rotationZ: %n',
+          change_material: 'テクスチャを変える。 %m.material',
+          change_light: 'ライティングの変更。x: %n y: %n z: %n intensity: %n',
           remove_cube: 'ブロックを消す。x座標を %n 、y座標を %n 、z座標を %n',
           reset: 'リセット'
         },
         en: {
           set_hostname: 'Set hostname to %s',
-          connect: 'Connect with ID: %s -  %s',
+          connect: 'Connect with ID: %s',
           change_cube_size: 'change cube size maginification: %n',
           set_cube: 'set cube at x: %n y: %n z: %n',
           set_box: 'set box at x: %n y: %n z: %n wide: %n depth: %n height: %n',
@@ -166,9 +196,14 @@
           map: 'draw map from csv: %s width: %n height: %n magnification: %n (lowland r1: %n g1: %n b1: %n ) (highland r2: %n g2: %n b2: %n ) upward: %n',
           pin: 'stand pins at position: %s width: %n height: %n magnification: %n up-left (latitude: %n longitude: %n ) down-right (latitude: %n longitude: %n ) shift %n',
           molecular_structure: 'molecular structure at x: %n y: %n z: %n magnification: %n mld file: %s',
+          ar_game: 'spawn sprite at x: %n y: %n z: %n sprite: %m.sprite costume: %m.costume color: %m.color direction: %m.direction',
           set_color: 'set color to r: %n g: %n b: %n',
           set_alpha: 'set transparency to alpha: %n',
           change_layer: 'change AR layer: %m.layer',
+          change_shape: 'change basic shape: %m.shape',
+          rotate_shape: 'rotate basic shape: rotationX: %n rotationY: %n rotationZ: %n',
+          change_material: 'change material: %m.material',
+          change_light: 'change lighting at x: %n y: %n z: %n intensity: %n',
           remove_cube: 'remove cube at x: %n y: %n z: %n',
           reset: 'reset'
         },
@@ -192,15 +227,26 @@
           [' ', locale[lang].map, 'map', 'map_data.csv', 257, 257, 100, 0, 255, 0, 124, 96, 53, 0],
           [' ', locale[lang].pin, 'pin', 'potision_data.csv', 257, 257, 2, 46.852, 126.738, 29.148, 149.238, 0],
           [' ', locale[lang].molecular_structure, 'molecular_structure', 0, 10, 0, 10, 'methane.mld'],
+          [' ', locale[lang].ar_game, 'ar_game', 0, 0, 0, 'spaceship', 'a', 'red', '+y'],
           [' ', locale[lang].set_color, 'set_color', 255, 255, 255],
           [' ', locale[lang].set_alpha, 'set_alpha', 1.0],
           [' ', locale[lang].change_layer, 'change_layer', '1'],
+          [' ', locale[lang].change_shape, 'change_shape', 'cube'],
+          [' ', locale[lang].rotate_shape, 'rotate_shape', 0, 0 ,0],
+          [' ', locale[lang].change_material, 'change_material', 'none'],
+          [' ', locale[lang].change_light, 'change_light', 10, 10, 10, 1000],
           [' ', locale[lang].remove_cube, 'remove_cube', 1, 0, 1],
           [' ', locale[lang].reset, 'reset']
         ],
         menus: {
           axes: ['x', 'y', 'z'],
-          layer: ['1', '2', '3']
+          layer: ['1', '2', '3'],
+          shape: ['cube', 'sphere', 'cylinder', 'cone', 'pyramid'],
+          material: ['none', 'aluminum', 'asphalt', 'brass', 'brick', 'cedar', 'craft', 'grass', 'maple', 'marble01', 'marble02', 'punching metal', 'stainless steel', 'stone01', 'stone02', 'terra cotta', 'earth'],
+          sprite: ['spaceship', 'invader', 'human', 'cat', 'dinosaur', 'frog', 'tree', 'car', 'airplane', 'sword', 'fire', 'explosion', '1x1x1', '2x2x2', '4x4x4', '8x8x8'],
+          costume: ['a', 'b'],
+          color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
+          direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
         }
       };
 

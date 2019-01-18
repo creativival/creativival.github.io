@@ -20,8 +20,8 @@
         hostname = str;
       };
 
-      ext.connect = function(str1, str2) {
-        roomId = str1 + "-" + str2;
+      ext.connect = function(str) {
+        roomId = str;
         socket = io.connect('http://' + hostname);
         socket.on("connect", function() {
           connected = true;
@@ -41,6 +41,11 @@
 
       ext.set_box = function(x, y, z, w, d, h) {
         let command = "set_box:" + x + ":" + y + ":" + z + ":" + w + ":" + d + ":" + h;
+        socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
+      }
+
+      ext.set_connection_block = function(x, y, z, d, s) {
+        let command = "set_connection_block:" + x + ":" + y + ":" + z + ":" + d + ":" + s;
         socket.emit("from_client", JSON.stringify({roomId: roomId, command: command}));
       }
 
@@ -153,9 +158,10 @@
       var locale = {
         ja: {
           set_hostname: '接続先を %s に設定する',
-          connect: 'ID: %s - %s で接続する',
+          connect: 'ID: %s で接続する',
           change_cube_size: 'ブロックサイズの変更。拡大倍率を %n',
           set_cube: 'ブロックを置く。x座標を %n 、y座標を %n 、z座標を %n',
+          set_connection_block: 'コネクションブロックを置く。x座標を %n y座標を %n z座標を %n, 向きを %m.block_direction サイズを %m.block_size',
           set_box: '直方体を置く。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n',
           set_cylinder: '円柱を置く。x座標を %n 、y座標を %n 、z座標を %n 、半径を %n 、高さを %n 、 %m.axes 軸',
           set_hexagon: '六角柱を置く。x座標を %n 、y座標を %n 、z座標を %n 、半径を %n 、高さを %n 、 %m.axes 軸',
@@ -181,9 +187,10 @@
         },
         en: {
           set_hostname: 'Set hostname to %s',
-          connect: 'Connect with ID: %s -  %s',
+          connect: 'Connect with ID: %s',
           change_cube_size: 'change cube size maginification: %n',
           set_cube: 'set cube at x: %n y: %n z: %n',
+          set_connection_block: 'set connection connection block at x: %n y: %n z: %n, direction: %m.block_direction size: %m.block_size',
           set_box: 'set box at x: %n y: %n z: %n wide: %n depth: %n height: %n',
           set_cylinder: 'set cylinder at x: %n y: %n z: %n radius: %n height: %n axis: %m.axes',
           set_hexagon: 'set hexagon at x: %n y: %n z: %n radius: %n height: %n axis: %m.axes',
@@ -216,6 +223,7 @@
           [' ', locale[lang].change_cube_size, 'change_cube_size', 1],
           [' ', locale[lang].set_cube, 'set_cube', 1, 0, 1],
           [' ', locale[lang].set_box, 'set_box', 2, 0, 2, 2, 2, 2],
+          [' ', locale[lang].connection_block, 'connection_block', 2, 0, 2, 'normal', 'x'],
           [' ', locale[lang].set_cylinder, 'set_cylinder', 3, 0, 3, 4, 4, 'y'],
           [' ', locale[lang].set_hexagon, 'set_hexagon', 4, 10, 10, 6, 4, 'y'],
           [' ', locale[lang].set_sphere, 'set_sphere', 4, 4, 4, 4],
@@ -247,6 +255,8 @@
           costume: ['a', 'b'],
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
+          block_direction: ['x', 'z''],
+          block_size: ['normal', 'half'],
         }
       };
 
