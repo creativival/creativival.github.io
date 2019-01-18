@@ -222,8 +222,8 @@
           [' ', locale[lang].connect, 'connect', '', ''],
           [' ', locale[lang].change_cube_size, 'change_cube_size', 1],
           [' ', locale[lang].set_cube, 'set_cube', 1, 0, 1],
+          [' ', locale[lang].set_connection_block, 'set_connection_block', 2, 0, 2, 'x', '2x1x1'],
           [' ', locale[lang].set_box, 'set_box', 2, 0, 2, 2, 2, 2],
-          [' ', locale[lang].set_connection_block, 'set_connection_block', 2, 0, 2, 'x', 'normal'],
           [' ', locale[lang].set_cylinder, 'set_cylinder', 3, 0, 3, 4, 4, 'y'],
           [' ', locale[lang].set_hexagon, 'set_hexagon', 4, 10, 10, 6, 4, 'y'],
           [' ', locale[lang].set_sphere, 'set_sphere', 4, 4, 4, 4],
@@ -256,7 +256,7 @@
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
           block_direction: ['x', 'z'],
-          block_size: ['normal', 'half'],
+          block_size: ['2x1x1', '2x1x0.5', '1x1x1', '1x1x0.5'],
         }
       };
 
