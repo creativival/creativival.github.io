@@ -190,7 +190,7 @@
           connect: 'Connect with ID: %s',
           change_cube_size: 'change cube size maginification: %n',
           set_cube: 'set cube at x: %n y: %n z: %n',
-          set_connection_block: 'set connection connection block at x: %n y: %n z: %n, direction: %m.block_direction size: %m.block_size',
+          set_connection_block: 'set connection block at x: %n y: %n z: %n, direction: %m.block_direction size: %m.block_size',
           set_box: 'set box at x: %n y: %n z: %n wide: %n depth: %n height: %n',
           set_cylinder: 'set cylinder at x: %n y: %n z: %n radius: %n height: %n axis: %m.axes',
           set_hexagon: 'set hexagon at x: %n y: %n z: %n radius: %n height: %n axis: %m.axes',
