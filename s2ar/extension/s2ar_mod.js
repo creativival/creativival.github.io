@@ -161,7 +161,7 @@
           connect: 'ID: %s で接続する',
           change_cube_size: 'ブロックサイズの変更。拡大倍率を %n',
           set_cube: 'ブロックを置く。x座標を %n 、y座標を %n 、z座標を %n',
-          set_connection_block: 'コネクションブロックを置く。x座標を %n y座標を %n z座標を %n, 向きを %m.block_direction サイズを %m.block_size',
+          set_connection_block: '連結ブロックを置く。x座標を %n y座標を %n z座標を %n, 向きを %m.block_direction サイズを %m.block_size',
           set_box: '直方体を置く。x座標を %n 、y座標を %n 、z座標を %n 、幅を %n 、奥行を %n 、高さを %n',
           set_cylinder: '円柱を置く。x座標を %n 、y座標を %n 、z座標を %n 、半径を %n 、高さを %n 、 %m.axes 軸',
           set_hexagon: '六角柱を置く。x座標を %n 、y座標を %n 、z座標を %n 、半径を %n 、高さを %n 、 %m.axes 軸',
