@@ -255,7 +255,7 @@
           costume: ['a', 'b'],
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
-          block_direction: ['x', 'z''],
+          block_direction: ['x', 'z'],
           block_size: ['normal', 'half'],
         }
       };
