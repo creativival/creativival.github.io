@@ -256,7 +256,7 @@
           color: ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta', 'white', 'black'],
           direction: ['+y', '+x', '+z', '-y', '-x', '-z'],
           block_direction: ['x', 'z'],
-          block_size: ['2x1x1', '2x1x0.5', '1x1x1', '1x1x0.5'],
+          block_size: ['2x1x1', '2x1x0.5', '1x1x1', '1x1x0.5', '0.5x0.5x1', '0.5x0.5x0.5'],
         }
       };
 
