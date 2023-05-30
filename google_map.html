@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Google Maps</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div
+        id="map"
+></div>
+
+<script>
+  let map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: {lat: 35.690158, lng: 139.750508},
+    });
+    // NOTE: This uses cross-domain XHR, and may not work on older browsers.
+    map.data.loadGeoJson(
+      "http://127.0.0.1:8000/static/json/chiyoda_tokyo_publisher.geojson"
+    );
+
+    map.data.setStyle((feature) => {
+      return (
+        {
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8, //円のサイズ(今回はランダムに設定)
+            fillColor: '#f00',
+            fillOpacity: 0.8,
+            strokeWeight: 0,
+          },
+          label: {
+            text: feature.getProperty('title'),                       //ラベル文字
+            color: '#333',                    //文字の色
+            fontSize: '12px',                     //文字のサイズ
+            className: 'marker-position',
+          },
+        });
+    });
+
+    //イベント(マーカークリック時)を設定
+    map.data.addListener('click', (e) => {
+      // //features->propertiesのaddressデータをクリック時に表示する
+      // alert(e.feature.getProperty('description'));
+      console.log(e)
+      // 緯度経度のデータ作成
+      const markerLatLng = new google.maps.LatLng({
+        lat: e.feature.getProperty('latitude'),
+        lng: e.feature.getProperty('longitude')
+      });
+      const infoWindow = new google.maps.InfoWindow({
+        position: markerLatLng,
+        content: e.feature.getProperty('description'),
+        // pixelOffset: new google.maps.Size(0, 0)
+      })
+      infoWindow.open(map)
+    });
+  }
+
+  window.initMap = initMap;
+
+  // function initMap() {
+  //   map = new google.maps.Map(document.getElementById("map"), {
+  //     center: { lat: -34.397, lng: 150.644 },
+  //     zoom: 8,
+  //   });
+  // }
+
+  window.initMap = initMap;
+</script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAx5eJoR6MDx5vlTmBpDF0kVhTOvSXjIQ&callback=initMap"></script>
+</body>
+</html>
